@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import {Header} from "./components/header/Header";
+import {Footer} from "./components/footer/Footer";
+import {Content} from "./components/content/Content";
+import {useState} from "react";
 
 function App() {
-  return (
+    const [applicationName, setApplicationName] = useState("React learning");
+    const nameHandler = () => {
+        setApplicationName(applicationName + 2);
+    }
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header application={{applicationName}} />
+      <Content />
+      <button onClick={nameHandler}>Content, change application name</button>
+      <Footer />
     </div>
   );
 }
