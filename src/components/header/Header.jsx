@@ -1,5 +1,6 @@
 import './Header.css'
 import * as React from "react";
+import {Link} from "react-router-dom";
 
 export class Header extends React.Component {
     constructor(props) {
@@ -36,12 +37,10 @@ export class Header extends React.Component {
     }
 
     render() {
-        console.log("Header", "render");
         return <div className="Header">
-            <button onClick={this.onClickEvent}>Change app name</button>
-            <span>{this.state.status}</span>
-            <h2>{this.state.name}</h2>
-            safas
+            <b>Learning react</b>
+            <Link className="link" to="/users">Users</Link>
+            <Link className="link" to="/files">Files</Link>
         </div>;
     }
 }

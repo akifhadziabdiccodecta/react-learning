@@ -1,0 +1,9 @@
+.sidebar {
+    height: calc(100vh - 100px);
+    background: aliceblue;
+}
+.app-wall {
+    background: azure;
+    height: calc(100vh - 100px);
+    overflow: hidden;
+}
