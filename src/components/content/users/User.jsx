@@ -26,6 +26,5 @@ export function Users() {
     return <>
         <h2>Users</h2>
         <DataGrid rows={users} columns={columns} pageSize={5} checkboxSelection />
-        <DataGrid rows={[...users]} columns={[...columns]} pageSize={5} checkboxSelection />
     </>;
 }

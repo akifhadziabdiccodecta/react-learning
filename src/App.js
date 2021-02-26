@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Header} from "./components/header/Header";
 import {Footer} from "./components/footer/Footer";
 import {Content} from "./components/content/Content";
-import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 
 function App() {
     return (

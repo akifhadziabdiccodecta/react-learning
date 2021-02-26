@@ -1,6 +1,7 @@
 import './Footer.css'
 import {useState, useEffect} from "react";
-import {Button} from "react-bootstrap";
+import {Emitter} from "../content/Emitter";
+import * as React from "react";
 
 export function Footer() {
     const languages = [
@@ -11,21 +12,12 @@ export function Footer() {
     ];
     let year = new Date().getFullYear();
     let showYear = true;
-    const [state, setState] = useState({year, showYear});
+    const [state] = useState({year, showYear});
     useEffect(() => {
-        console.log("Footer", "componentDidMount");
-        return () => {
-            console.log("Footer", "componentWillUnmount");
-        }
-    }, [state.year, state.showYear])
-    let handler = (event) => {
-        setState({year: state.year + 1});
-    }
-    let showYearHandler = (event) => {
-        setState((state) => {
-            return {showYear: !state.showYear}
-        });
-    }
+        Emitter.emitter.subscribe(data => {
+            console.log("Footer data", data )
+        })
+    }, [])
     console.log("Footer", "render")
     return <footer className="footer">
         Copyright {state.year}
@@ -44,5 +36,9 @@ export function Footer() {
                 )
             }
         </span>
+        <label>
+            Send data to add users
+            <input onChange={event => Emitter.emitter.next(event.target.value)}/>
+        </label>
     </footer>
 }

@@ -5,5 +5,5 @@
 .app-wall {
     background: azure;
     height: calc(100vh - 100px);
-    overflow: hidden;
+    overflow: auto;
 }
